@@ -10,6 +10,7 @@ namespace TestGame
         public int y;
         public int posx;
         public int posy;
+        public int PlayerSpeed = 1;
 
 
         public void update()
@@ -19,8 +20,8 @@ namespace TestGame
         }
         public void updatepos(int xx, int yy, int size)
         {
-            posx = ((x-xx)/size)*size;
-            posy = ((y - yy) / size) * size;
+            posx = ((x-xx)/size)*size* PlayerSpeed;
+            posy = ((y - yy) / size) * size * PlayerSpeed;
         }
 
 
