@@ -8,7 +8,7 @@ using System.Linq;
 namespace TestGame
 {
     class EntityManager
-	{
+	{	static int[,] field = new int[8,8];
 		static List<Entity> entities = new List<Entity>();
 		static List<Pawn> pawns = new List<Pawn>();
 		//public static IEnumerable<BlackHole> BlackHoles { get { return blackHoles; } }

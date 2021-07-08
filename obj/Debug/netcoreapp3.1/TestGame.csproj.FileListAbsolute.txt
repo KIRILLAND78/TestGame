@@ -36,3 +36,4 @@ C:\Users\kirill\source\repos\TestGame\obj\Debug\netcoreapp3.1\TestGame.pdb
 C:\Users\kirill\source\repos\TestGame\obj\Debug\netcoreapp3.1\TestGame.genruntimeconfig.cache
 C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\pawn.xnb
 C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\Choose.xnb
+C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\Board.xnb

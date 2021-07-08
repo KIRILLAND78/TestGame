@@ -5,7 +5,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-
 namespace TestGame
 {
     abstract class Entity
@@ -16,6 +15,10 @@ namespace TestGame
         public float Orientation=0;
         public bool IsExpired;
         public Vector2 Size = new Vector2(64, 64);
+        public bool chosen = false;
+
+
+
         public abstract void Update();
         public virtual void Draw(SpriteBatch spriteBatch)
         {
@@ -37,24 +40,36 @@ namespace TestGame
 
         public override void Update()
         {
+            //Если кнопка нажата
+            if (Mouse.GetState().LeftButton==ButtonState.Pressed) {
+
+                chosen = false;
+                //Kiri: ЗАменить Mouse.GetState() на проверку через игрока!!!!
+                if (GameHelper.CheckBoundaries(Position, Size, Mouse.GetState().X, Mouse.GetState().Y)){
+                    chosen = true;
+                };
+            }
+
+
             //Kiri: управление стрелками!
-
-
-            if (Keyboard.GetState().IsKeyDown(Keys.Down))
+            if (chosen == true)
             {
-                Position += new Vector2(0,4);//Вниз
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.Up))
-            {
-                Position += new Vector2(0, -4);//Вверх
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.Right))
-            {
-                Position += new Vector2(4, 0);//Вправо
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.Left))
-            {
-                Position += new Vector2(-4, 0);//Влево
+                if (Keyboard.GetState().IsKeyDown(Keys.Down))
+                {
+                    Position += new Vector2(0, 4);//Вниз
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.Up))
+                {
+                    Position += new Vector2(0, -4);//Вверх
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.Right))
+                {
+                    Position += new Vector2(4, 0);//Вправо
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                {
+                    Position += new Vector2(-4, 0);//Влево
+                }
             }
         }
     }

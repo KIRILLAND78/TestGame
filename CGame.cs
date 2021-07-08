@@ -8,7 +8,6 @@ namespace TestGame
     {
         private GraphicsDeviceManager _graphics;
         public SpriteBatch _spriteBatch;
-        Player myplayer = new Player();
         public CGame()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -18,17 +17,19 @@ namespace TestGame
 
         protected override void Initialize()
         {
+            _graphics.PreferredBackBufferWidth = 768;
+            _graphics.PreferredBackBufferHeight = 512;
+            _graphics.ApplyChanges();
             // TODO: Add your initialization logic here
             base.Initialize();
         }
-
         protected override void LoadContent()
         {
             Assets.Load(Content);
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            EntityManager.Add(new Pawn(new Vector2(20, 20)));
-            EntityManager.Add(new Pawn(new Vector2(60, 60)));
-            EntityManager.Add(new Pawn(new Vector2(123, 123)));//добавление существ на изи.
+            EntityManager.Add(new Pawn(new Vector2(0, 0)));
+            EntityManager.Add(new Pawn(new Vector2(64, 64)));
+            EntityManager.Add(new Pawn(new Vector2(128, 128)));//добавление существ на изи.
         }
 
         protected override void Update(GameTime gameTime)
@@ -36,21 +37,27 @@ namespace TestGame
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
             EntityManager.Update();//Kiri: вызываем update у EManager. Он передает update() всем остальным сущ-вам.
-            myplayer.update();
-            myplayer.updatepos(0,0,64);
+            Player.update();
+            Player.updatepos(0,0,64);
 
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-            // TODO: Add your drawing code here
+
+            GraphicsDevice.Clear(Color.DarkGray);
             _spriteBatch.Begin();
-            EntityManager.Draw(_spriteBatch);
-            _spriteBatch.Draw(Assets.chooseTexture, new Vector2(myplayer.posx, myplayer.posy), Color.White);
+
+
+
+            _spriteBatch.Draw(Assets.boardTexture, new Vector2(0,0), null, Color.White, 0, new Vector2(0, 0), 1f, 0, 0);
+            //Рисуем доску
+
+
+            EntityManager.Draw(_spriteBatch);//Kiri: вызываем Draw у EManager. Он передает draw() всем остальным сущ-вам.
+            _spriteBatch.Draw(Assets.chooseTexture, new Vector2(Player.posx, Player.posy), Color.White);//Kiri: Рисуем квадрат
             _spriteBatch.End();
             base.Draw(gameTime);
         }

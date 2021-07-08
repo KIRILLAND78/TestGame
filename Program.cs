@@ -7,8 +7,8 @@ namespace TestGame
         [STAThread]
         static void Main()
         {
-            using (var game = new CGame())
-                game.Run();
+            var game = new CGame();
+            game.Run();
         }
     }
 }
