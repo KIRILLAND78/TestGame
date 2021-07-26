@@ -14,7 +14,7 @@ namespace TestGame
 		//public static IEnumerable<BlackHole> BlackHoles { get { return blackHoles; } }
 
 		static bool isUpdating;
-		static List<Entity> addedEntities = new List<Entity>();
+		static public List<Entity> addedEntities = new List<Entity>();
 
 		public static int Count { get { return entities.Count; } }
 

@@ -6,9 +6,13 @@
   <SourceFiles>
     <File>C:/Users/kirill/source/repos/TestGame/Content/import/Board.png</File>
     <File>C:/Users/kirill/source/repos/TestGame/Content/import/Choose.png</File>
+    <File>C:/Users/kirill/source/repos/TestGame/Content/import/Chosen.png</File>
     <File>C:/Users/kirill/source/repos/TestGame/Content/import/pawn.png</File>
+    <File>C:/Users/kirill/source/repos/TestGame/Content/import/pawn_w.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

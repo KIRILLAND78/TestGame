@@ -37,3 +37,5 @@ C:\Users\kirill\source\repos\TestGame\obj\Debug\netcoreapp3.1\TestGame.genruntim
 C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\pawn.xnb
 C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\Choose.xnb
 C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\Board.xnb
+C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\Chosen.xnb
+C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\pawn_w.xnb

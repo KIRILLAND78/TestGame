@@ -27,9 +27,24 @@ namespace TestGame
         {
             Assets.Load(Content);
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            EntityManager.Add(new Pawn(new Vector2(0, 0)));
-            EntityManager.Add(new Pawn(new Vector2(64, 64)));
-            EntityManager.Add(new Pawn(new Vector2(128, 128)));//добавление существ на изи.
+            for(int i=0; i <= 7; i++) { 
+            EntityManager.Add(new Pawn(new Vector2(i*64, 64), true));//добавление существ на изи.
+                                                            }//Черные
+
+            for (int i = 0; i <= 7; i++)
+            {
+                EntityManager.Add(new Pawn(new Vector2(i * 64, 384), false));//добавление существ на изи.
+                                                            }//Белые
+            EntityManager.addedEntities.ForEach(Pawn=> {
+            if (Pawn.Position.Y > 128)
+                {
+                    Pawn.black = false;
+
+
+                }
+            }
+                
+                );
         }
 
         protected override void Update(GameTime gameTime)

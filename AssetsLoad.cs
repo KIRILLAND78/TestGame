@@ -7,7 +7,9 @@ namespace TestGame
 	static class Assets
 	{
 		public static Texture2D chooseTexture { get; private set; }
+		public static Texture2D chosenTexture { get; private set; }
 		public static Texture2D pawnTexture { get; private set; }
+		public static Texture2D pawnTexture_w { get; private set; }
 		public static Texture2D boardTexture { get; private set; }
 
 
@@ -22,8 +24,10 @@ namespace TestGame
 		{
 			// TODO: use this.Content to load your game content here
 			pawnTexture = Content.Load<Texture2D>("import/pawn");
+			pawnTexture_w = Content.Load<Texture2D>("import/pawn_w");
 			chooseTexture = Content.Load<Texture2D>("import/Choose");
 			boardTexture = Content.Load<Texture2D>("import/Board");
+			chosenTexture = Content.Load<Texture2D>("import/Chosen");
 
 			//Font = Content.Load<SpriteFont>("Font");
 		}
