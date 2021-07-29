@@ -39,3 +39,16 @@ C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\Cho
 C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\Board.xnb
 C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\Chosen.xnb
 C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\pawn_w.xnb
+C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\ChessTextures\Bishop_B.xnb
+C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\ChessTextures\Bishop_W.xnb
+C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\ChessTextures\Horse_B.xnb
+C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\ChessTextures\Horse_W.xnb
+C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\ChessTextures\King_B.xnb
+C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\ChessTextures\King_W.xnb
+C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\ChessTextures\Pawn2_B.xnb
+C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\ChessTextures\Pawn2_W.xnb
+C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\ChessTextures\Queen_W.xnb
+C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\ChessTextures\Quenn_B.xnb
+C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\ChessTextures\Tower_B.xnb
+C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\ChessTextures\Tower_W.xnb
+C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\ChessTextures\Queen_B.xnb

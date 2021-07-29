@@ -27,8 +27,20 @@ namespace TestGame
         {
             Assets.Load(Content);
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            for(int i=0; i <= 7; i++) { 
-            EntityManager.Add(new Pawn(new Vector2(i*64, 64), true));//добавление существ на изи.
+            EntityManager.Add(new Tower(new Vector2(0, 0), true));
+            EntityManager.Add(new Tower(new Vector2(448, 0), true));
+            EntityManager.Add(new Horse(new Vector2(64, 0), true));
+            EntityManager.Add(new Horse(new Vector2(384, 0), true));
+            EntityManager.Add(new Bishop(new Vector2(128, 0), true));
+            EntityManager.Add(new Bishop(new Vector2(320, 0), true));
+            EntityManager.Add(new Queen(new Vector2(192, 0), true));
+            EntityManager.Add(new King(new Vector2(256, 0), true));
+            for (int i=0; i <= 7; i++) { 
+                EntityManager.Add(new Pawn(new Vector2(i*64, 64), true));//добавление существ на изи.
+
+
+
+
                                                             }//Черные
 
             for (int i = 0; i <= 7; i++)
