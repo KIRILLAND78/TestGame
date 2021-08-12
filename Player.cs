@@ -4,24 +4,23 @@ using System.Text;
 using Microsoft.Xna.Framework.Input;
 namespace TestGame
 {
-    class Player
+    static public class Player
     {
-        public int x;
-        public int y;
-        public int posx;
-        public int posy;
-        public int PlayerSpeed = 1;
+        static public int x;
+        static public int y;
+        static public int posx;
+        static public int posy;
 
 
-        public void update()
+        static public void update()
         {
             x = Mouse.GetState().X;
             y = Mouse.GetState().Y;
         }
-        public void updatepos(int xx, int yy, int size)
-        {
-            posx = ((x-xx)/size)*size* PlayerSpeed;
-            posy = ((y - yy) / size) * size * PlayerSpeed;
+        static public void updatepos(int xx, int yy, int size)
+        {//kiri: Здесь мы правим позицию зеленого квадратика
+            posx = ((x-xx)/size)*size;
+            posy = ((y - yy) / size) * size;
         }
 
 
