@@ -26,6 +26,8 @@ namespace TestGame
         protected override void LoadContent()
         {
             Assets.Load(Content);
+
+
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             EntityManager.Add(new Tower(new Vector2(0, 0), true));
             EntityManager.Add(new Tower(new Vector2(448, 0), true));
@@ -34,15 +36,20 @@ namespace TestGame
             EntityManager.Add(new Bishop(new Vector2(128, 0), true));
             EntityManager.Add(new Bishop(new Vector2(320, 0), true));
             EntityManager.Add(new Queen(new Vector2(192, 0), true));
-            EntityManager.Add(new King(new Vector2(256, 0), true));
+            //вернуть короля!!!(но потом)
+            //EntityManager.Add(new King(new Vector2(256, 0), true));
             for (int i=0; i <= 7; i++) { 
                 EntityManager.Add(new Pawn(new Vector2(i*64, 64), true));//добавление существ на изи.
-
-
-
-
                                                             }//Черные
 
+            EntityManager.Add(new Tower(new Vector2(448, 448), false));
+            EntityManager.Add(new Tower(new Vector2(0, 448), false));
+            EntityManager.Add(new Horse(new Vector2(64, 448), false));
+            EntityManager.Add(new Horse(new Vector2(384, 448), false));
+            EntityManager.Add(new Bishop(new Vector2(128, 448), false));
+            EntityManager.Add(new Bishop(new Vector2(320, 448), false));
+            EntityManager.Add(new Queen(new Vector2(192, 448), false));
+            EntityManager.Add(new King(new Vector2(256, 448), false));
             for (int i = 0; i <= 7; i++)
             {
                 EntityManager.Add(new Pawn(new Vector2(i * 64, 384), false));//добавление существ на изи.
@@ -51,8 +58,6 @@ namespace TestGame
             if (Pawn.Position.Y > 128)
                 {
                     Pawn.black = false;
-
-
                 }
             }
                 
@@ -85,6 +90,15 @@ namespace TestGame
 
             EntityManager.Draw(_spriteBatch);//Kiri: вызываем Draw у EManager. Он передает draw() всем остальным сущ-вам.
             _spriteBatch.Draw(Assets.chooseTexture, new Vector2(Player.posx, Player.posy), Color.White);//Kiri: Рисуем квадрат
+
+
+
+            
+            Vector2 position = new Vector2(625, 150); // position
+            Color color = new Color(80, 80, 80);// color grey
+            _spriteBatch.DrawString(Assets.textBlock, EntityManager.text, position, color); // draw text
+
+
             _spriteBatch.End();
             base.Draw(gameTime);
         }

@@ -6,6 +6,7 @@ namespace TestGame
 {
 	static class Assets
 	{
+		public static SpriteFont textBlock { get; private set; }
 		public static Texture2D chooseTexture { get; private set; }
 		public static Texture2D chosenTexture { get; private set; }
 		public static Texture2D pawnTexture { get; private set; }
@@ -32,6 +33,7 @@ namespace TestGame
 
 		public static void Load(ContentManager Content)
 		{
+			textBlock = Content.Load<SpriteFont>("import/Xolonium");
 			// TODO: use this.Content to load your game content here
 			pawnTexture = Content.Load<Texture2D>("import/ChessTextures/Pawn2_B");
 			pawnTexture_w = Content.Load<Texture2D>("import/ChessTextures/Pawn2_W");

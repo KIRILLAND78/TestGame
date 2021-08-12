@@ -23,6 +23,15 @@ namespace TestGame
 
 		public static int Count { get { return entities.Count; } }
 
+		static public string text = "Black!";
+		static public bool hodblack =true;
+
+		public static void MoveDone()
+        {
+			hodblack = !hodblack;
+			text=hodblack ? "Black!" : "White!";
+        }
+
 
 		public static Entity FindEntity(int x, int y)
 		{

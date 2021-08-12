@@ -19,6 +19,7 @@
     <File>C:/Users/kirill/source/repos/TestGame/Content/import/ChessTextures/Tower_W.png</File>
     <File>C:/Users/kirill/source/repos/TestGame/Content/import/Choose.png</File>
     <File>C:/Users/kirill/source/repos/TestGame/Content/import/Chosen.png</File>
+    <File>C:/Users/kirill/source/repos/TestGame/Content/import/File.spritefont</File>
     <File>C:/Users/kirill/source/repos/TestGame/Content/import/pawn.png</File>
     <File>C:/Users/kirill/source/repos/TestGame/Content/import/pawn_w.png</File>
   </SourceFiles>
@@ -38,6 +39,7 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
+    <File>import/Xolonium.spritefont</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>

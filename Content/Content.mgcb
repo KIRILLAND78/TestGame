@@ -193,6 +193,13 @@
 /processorParam:TextureFormat=Color
 /build:import/Chosen.png
 
+#begin import/File.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:import/File.spritefont;import/Xolonium.spritefont
+
 #begin import/pawn.png
 /importer:TextureImporter
 /processor:TextureProcessor

@@ -21,10 +21,11 @@ namespace TestGame
         
         public virtual bool CanGo(int x, int y)
         {
-
             return false;
         }
-        public abstract bool CanAttack(int x, int y);
+        public virtual bool CanAttack(int x, int y) {
+            return false;
+        }
 
         public void Update()
         {//Здесь я сделал апдейт чтобы не переписывать его каждый мать его раз ааааааааааааааааааааааааааааааааа
@@ -38,7 +39,7 @@ namespace TestGame
                     chosen = true;
                 };
             }
-            if (Mouse.GetState().RightButton == ButtonState.Pressed)
+            if ((Mouse.GetState().RightButton == ButtonState.Pressed) && (black == EntityManager.hodblack))
             {
                 if ((CanGo(Player.posx, Player.posy)) && (chosen)&&!((Position.Y == Player.posy) && (Position.X== Player.posx)))
                 {
@@ -48,6 +49,8 @@ namespace TestGame
                     }
                     Position.X = Player.posx;
                     Position.Y = Player.posy;
+
+                    EntityManager.MoveDone();
                 }
             }
         }
@@ -151,10 +154,6 @@ namespace TestGame
             Position = position;
             black = blackd;
         }
-        public override bool CanAttack(int x, int y)
-        {
-            return false;
-        }
 
         public override bool CanGo(int x, int y)
         {for (int a = (int)Position.X-64; a >= 0; a -= 64)
@@ -206,10 +205,6 @@ namespace TestGame
             black = blackd;
         }
 
-        public override bool CanAttack(int x, int y)
-        {
-            return false;
-        }
         public override bool CanGo(int x, int y)
         { int b;
             int a;
@@ -265,10 +260,6 @@ namespace TestGame
             black = blackd;
         }
 
-        public override bool CanAttack(int x, int y)
-        {
-            return false;
-        }
         public override bool CanGo(int x, int y)
         {
             int b = (int)Position.Y + 128;
@@ -302,10 +293,6 @@ namespace TestGame
                 Position = position;
                 black = blackd;
         }
-        public override bool CanAttack(int x, int y)
-        {
-            return false;
-        }
 
         public override bool CanGo(int x, int y)
             {
@@ -321,10 +308,6 @@ namespace TestGame
                 sprite_w = Assets.queenTexture_w;
                 Position = position;
                 black = blackd;
-        }
-        public override bool CanAttack(int x, int y)
-        {
-            return false;
         }
 
         public override bool CanGo(int x, int y)

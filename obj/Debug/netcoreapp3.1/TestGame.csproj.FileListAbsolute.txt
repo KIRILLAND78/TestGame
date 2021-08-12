@@ -52,3 +52,4 @@ C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\Che
 C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\ChessTextures\Tower_B.xnb
 C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\ChessTextures\Tower_W.xnb
 C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\ChessTextures\Queen_B.xnb
+C:\Users\kirill\source\repos\TestGame\bin\Debug\netcoreapp3.1\Content\import\Xolonium.xnb
