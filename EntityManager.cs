@@ -32,6 +32,9 @@ namespace TestGame
 			text=hodblack ? "Black!" : "White!";
         }
 
+		/// <summary>
+		/// Говорит, какая фигура расположена в данной позиции. Возвращает фигуру как класс.
+		/// </summary>
 
 		public static Entity FindEntity(int x, int y)
 		{
@@ -46,20 +49,35 @@ namespace TestGame
 			//fix this code later
 			return trigger;
 		}
+
+		/// <summary>
+		/// Говорит, опасна ли эта клетка для короля. Возвращает bool.
+		/// </summary>
+
 		public static bool TileIsDangerous(int x, int y, bool black)
 		{
 			bool trigger = false;
 			entities.ForEach(Ent =>
 			{
-				if ((Ent.black!=black)&&((Ent.CanGo(x,y)&&!(Ent is Pawn))|| (Ent.CanAttack(x, y) && (Ent is Pawn))))
+				if (!(Ent is King)&&((Ent.black!=black)&&((Ent.CanGo(x,y)&&!(Ent is Pawn))|| (Ent.CanAttack(x, y) && (Ent is Pawn)))))
 				{
 					trigger = true;
 				}
+				if ((Ent is King)&&(Ent.black!=black))
+                {
+					if (((x==Ent.Position.X)|| (x == Ent.Position.X+64)|| (x == Ent.Position.X - 64))&& ((y == Ent.Position.Y) || (y == Ent.Position.Y+64) || (y == Ent.Position.Y-64))){
+						trigger = true;
+                    }
+
+                }
 			});
 			//fix this code later
 			return trigger;
 		}
 
+		/// <summary>
+		/// Добавляет фигуру.
+		/// </summary>
 
 		public static void Add(Entity entity)
 		{

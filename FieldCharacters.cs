@@ -9,6 +9,7 @@ namespace TestGame
 {
     abstract class Entity
     {
+        public int moves = 0;
         public bool black=true;
         public Texture2D sprite_b;
         public Texture2D sprite_w;
@@ -47,9 +48,21 @@ namespace TestGame
                     {
                         EntityManager.FindEntity(Player.posx, Player.posy).IsExpired = true;
                     }
+                    //check for castling
+                    //right
+                    if ((this is King) && Position.X + 128 == Player.posx)
+                    {
+                        EntityManager.FindEntity(Player.posx + 64, Player.posy).Position = new Vector2(Player.posx - 64, Player.posy);
+                    }
+                    //left
+                    if ((this is King) && Position.X - 128 == Player.posx)
+                    {
+                        EntityManager.FindEntity(Player.posx - 128, Player.posy).Position = new Vector2(Player.posx+ 64, Player.posy);
+                    }
+
                     Position.X = Player.posx;
                     Position.Y = Player.posy;
-
+                    moves++;
                     EntityManager.MoveDone();
                 }
             }
@@ -80,7 +93,7 @@ namespace TestGame
             {
                 spriteBatch.Draw(sprite_w, Position, null, color, Orientation, default, 1f, 0, 0);
             }
-
+            spriteBatch.DrawString(Assets.textBlock, Convert.ToString(moves), Position, color); // draw text
             if (chosen)
             {
                 spriteBatch.Draw(Assets.chosenTexture, Position, null, color, Orientation, default, 1f, 0, 0);
@@ -297,7 +310,24 @@ namespace TestGame
         public override bool CanGo(int x, int y)
             {
                 if (!EntityManager.TileIsDangerous(x,y,black)&& (Position.Y - 64 ==y || Position.Y == y || Position.Y + 64 == y) && !(Position.X == x && Position.Y == y) && (Position.X - 64 == x || Position.X == x || Position.X + 64 == x) && (EntityManager.FindEntity(x, y) == null || (EntityManager.FindEntity(x, y) != null && EntityManager.FindEntity(x, y).black != black))) { return true; }
-                return false;
+
+                //castling right
+                if ((moves==0)&& x==Position.X+128 && y == Position.Y && EntityManager.FindEntity(x , y) is null && EntityManager.FindEntity(x -64, y) is null && !EntityManager.TileIsDangerous(x-64,y,black)&& !EntityManager.TileIsDangerous(x , y, black)&&EntityManager.FindEntity(x + 64, y) is Tower)
+            {if (EntityManager.FindEntity(x + 64, y).black == black && !EntityManager.TileIsDangerous((int)Position.X, y, black))
+                {
+                    return true;
+                }
+            }
+            //castling left
+
+            if ((moves == 0) && x == Position.X - 128 && y == Position.Y && EntityManager.FindEntity(x, y) is null && EntityManager.FindEntity(x+64, y) is null && EntityManager.FindEntity(x - 64, y) is null && !EntityManager.TileIsDangerous(x - 64, y, black) && !EntityManager.TileIsDangerous(x + 64, y, black) && !EntityManager.TileIsDangerous(x, y, black) && EntityManager.FindEntity(x - 128, y) is Tower)
+            {
+                if (EntityManager.FindEntity(x - 128, y).black == black && !EntityManager.TileIsDangerous((int)Position.X, y, black))
+                {
+                    return true;
+                }
+            }
+            return false;
             }
         }
         class Queen : Entity

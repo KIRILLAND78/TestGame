@@ -36,8 +36,7 @@ namespace TestGame
             EntityManager.Add(new Bishop(new Vector2(128, 0), true));
             EntityManager.Add(new Bishop(new Vector2(320, 0), true));
             EntityManager.Add(new Queen(new Vector2(192, 0), true));
-            //вернуть короля!!!(но потом)
-            //EntityManager.Add(new King(new Vector2(256, 0), true));
+            EntityManager.Add(new King(new Vector2(256, 0), true));
             for (int i=0; i <= 7; i++) { 
                 EntityManager.Add(new Pawn(new Vector2(i*64, 64), true));//добавление существ на изи.
                                                             }//Черные
